@@ -232,10 +232,7 @@ app.post('/reserveBook', async function(req,res){
                                                     $push: { data: reservedBook } 
                                                 })
                                                 .then(() => {
-                                                    res.json({
-                                                    "status": "ok",
-                                                    "result": "The Book Reserved for you!"
-                                                    });
+                                                    res.redirect(307,'/showMyHistory');
                                                     })
                                                 .catch((err) => {
                                                 res.send("Some error occurred !!...Please try after sometime");
