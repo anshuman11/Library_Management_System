@@ -130,7 +130,7 @@ app.post('/signup', function (req, res) {
                                     if (err) {
                                         res.send("Some error occurred!!..Student not saved");
                                     } else {
-                                        res.render("home");
+                                        res.redirect(307,'/viewBooks');
                                     }
                                 });
                             }
@@ -315,11 +315,7 @@ app.post('/admin/addBook', function (req, res) {
                 errorResponse = err.errors.currentAvailable.properties;
             res.json(errorResponse);
         } else
-            res.json({
-                "status": "ok",
-                "book_id": book._id,
-                "result": "Book added into database!"
-            });
+                res.render('admin');
     });
 
 });
@@ -386,10 +382,7 @@ app.post('/admin/deleteBook', async function (req, res) {
         })
         .exec()
         .then(() => {
-            res.json({
-                "status": "ok",
-                "result": "Book is successfully deleted from database!"
-            });
+            res.render('admin');
         })
         .catch((err) => {
             res.json({
@@ -411,10 +404,7 @@ app.post('/admin/update', async function (req, res) {
         }, req.body)
         .exec()
         .then(() => {
-            res.json({
-                "status": "ok",
-                "result": "Book updated with provided properties!"
-            });
+            res.render('admin');
         })
         .catch((err) => {
             res.send("Some error occurred!..Book is not updated");

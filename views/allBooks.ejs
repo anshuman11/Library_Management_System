@@ -126,7 +126,7 @@
                                     <option value="" disabled selected>Choose your category</option>
                                     <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
                                     <option value="ELECTRONICS & COMMUNICATION">ELECTRONICS & COMMUNICATION</option>
-                                    <option value="NOVEL">NOVELS</option>
+                                    <option value="NOVEL">NOVEL</option>
                                     <option value="MAGAZINES" > MAGAZINES </option>
                             </select>    
                         </div>
@@ -156,11 +156,11 @@
                                         <img class="card-img-top embed-responsive-item"  alt="Card image cap" src= <%= allFilteredBooks[i].bookImage %> >
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"> <b>Book Name</b>  : <%= allFilteredBooks[i].bookName %></li>
-                                    <li class="list-group-item"> <b>Auther Name</b> : <%= allFilteredBooks[i].autherName %></li>
-                                    <li class="list-group-item"> <b>Category</b> : <%= allFilteredBooks[i].category %></li>
+                                    <li class="list-group-item"> <b>Book Name</b>  : <%= allFilteredBooks[i].bookName.toUpperCase() %></li>
+                                    <li class="list-group-item"> <b>Auther Name</b> : <%= allFilteredBooks[i].autherName.toUpperCase() %></li>
+                                    <li class="list-group-item"> <b>Category</b> : <%= allFilteredBooks[i].category.toUpperCase() %></li>
                                     <li class="list-group-item"> <b>Book Edition</b>   : <%= allFilteredBooks[i].edition %></li>
-                                    <li class="list-group-item"> <b>Current Available</b>   : <%= allFilteredBooks[i].currentAvailable %></li>
+                                    <li class="list-group-item"> <b>Current Available</b>   : <%= allFilteredBooks[i].currentAvailable.toUpperCase() %></li>
                                     <br>
                                     <form action="/reserveBook" method="POST">
                                         <input type="text" name="bookId" style="display: none;" value= <%=allFilteredBooks[i].bookId %> >

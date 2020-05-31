@@ -129,9 +129,9 @@
                                         <img class="card-img-top embed-responsive-item"  alt="Card image cap" src= <%= userHistory[i].bookImage %> >
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                    <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Book Name</b>  : <%= userHistory[i].bookName %></li>
-                                    <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Auther Name</b> : <%= userHistory[i].autherName %></li>
-                                    <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Category</b> : <%= userHistory[i].category %></li>
+                                    <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Book Name</b>  : <%= userHistory[i].bookName.toUpperCase() %></li>
+                                    <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Auther Name</b> : <%= userHistory[i].autherName.toUpperCase() %></li>
+                                    <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Category</b> : <%= userHistory[i].category.toUpperCase() %></li>
                                     <li class="list-group-item p-3 mb-2 bg-secondary text-white"> <b>Book Edition</b>   : <%= userHistory[i].edition %></li>
                                     <li class="list-group-item p-3 mb-2 bg-success text-white"> <b>Issue Date</b>   : <%= userHistory[i].issueDate %></li>
                                     <li class="list-group-item p-3 mb-2 bg-warning text-white"> <b>Due Date</b>   : <%= userHistory[i].dueDate %></li>

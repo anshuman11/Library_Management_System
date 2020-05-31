@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home Page</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="project.css">
+  <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style> #fort {
+    width: 70%; margin-left: 5%; margin-top: 8%;
+  }
+
+@media screen and (min-width: 480px) {
+  #fort {
+    width: 25%; margin-left: 65%; margin-top: 8%;
+  }
+}</style>
 </head>
 <body style="background-image: url(https://culturenl.co.uk/wp-content/uploads/2014/04/DSC_9842.jpg); background-repeat: no-repeat; background-size: cover;">
-	<nav style="background-color: #a84832">
-		<img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Iiit-una-logo.png" style="width:100px; height:100px; float: left; margin-left: 100px">
-		<h1 style="margin-left:250px;font-family: serif;font-size: 30px;color: white;">Indian Institute of Information Technology, Una</h1>
-		<h4 style="margin-left: 300px; font-size: 20px color: white">(An institute of national importance)</small>
-			<br>
-			<br>
-	</nav>
-	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <span class="navbar-brand" href="/admin" style ="margin-left: 50px;font-style: bold;font-size: 30px;font-family: serif;">Welcome to Online Library</span>
+  <nav style="background-color: #a84832">
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Iiit-una-logo.png" style="width:6%; height:15vh; float: left; margin-left: 8%">
+    <h1 style="margin-left:20%;font-family: serif;font-size:200%;color: white;">Indian Institute of Information Technology, Una</h1>
+    <h4 style="margin-left: 25%; font-size: 100% color: white">(An institute of national importance)</small>
+      <br>
+      <br>
+  </nav>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <span class="navbar-brand" href="/admin" style ="margin-left: 5%;font-style: bold;font-size: 200%;font-family: serif;">Welcome to Online Library</span>
         <a class="navbar-brand btn btn-dark btn-lg text-white" href="/admin">Admin</a>
 
         <form action="/login" method="POST" class="form-inline" id ="three">
@@ -23,8 +38,8 @@
             <button class="btn btn-success text-white my-2 my-sm-0" type="submit">Sign in</button>
         </form>
     </nav>
-        <form action="/signup" method="POST" style ="width: 300px; margin-left: 800px; margin-top: 100px;">
-            <label style = "font-style: bold; font-size: 20px;font-family: serif;background-color: yellow;">New here? Create a free account!!</label>
+        <form  action="/signup" method="POST" id = "fort">
+            <label style = "font-style: bold; font-size: 130%;font-family: serif;background-color: yellow;">New here? Create a free account!!</label>
             <div class="form-group">
                 <input name="username" placeholder = "UserId ( i.e. Roll Number )" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
