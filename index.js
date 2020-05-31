@@ -211,8 +211,8 @@ app.post('/reserveBook', async function(req,res){
                 var date = new Date();
                 date.setDate(date.getDate() + 15);
             var reservedBook = await bookModel.findByIdAndUpdate({_id: req.body.bookId },
-                    {   $set : { currentAvailable : true , dueDate : date},
-                        $currentDate: { issueDate : { $type: "date" } }
+                    {   $set : { currentAvailable : false , dueDate : date, issueDate : new Date()}
+                        //$currentDate: { issueDate : { $type: "date" } }
                     },
                     { new : true }
                     )
@@ -534,7 +534,6 @@ app.post('/admin/showMyHistory', async function (req, res) {
                 });
                 var userHistory = myUser.data.map(function (book) {
                 var tempdata = {
-                                "bookId": book._id,
                                 "bookName": book.bookName,
                                 "autherName": book.autherName,
                                 "category": book.category,
@@ -542,8 +541,7 @@ app.post('/admin/showMyHistory', async function (req, res) {
                                 "edition": book.edition,
                                 "bookImage": book.bookImage,
                                 "issueDate": book.issueDate,
-                                "due_Date": book.due_Date,
-                                "dateDifference": book.dateDifference
+                                "dueDate": book.dueDate
                                 };
                             return tempdata;
                             });
