@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>All Books</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        
+
+        <style type=text/css >
+            body{
+                background-color: sienna;
+            }
+            .navbar{
+                    box-shadow: 5px 4px 6px rgba(0,0,0,0.1);
+            }
+            .head{
+                    font-family: 'Merriweather', serif;
+                    font-size: 35px;
+            }
+            .main1{
+                    align-self: center;
+                    align-items: center;
+                    background-color: none;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-family: 'Merriweather', serif;
+                }
+            .main2{
+                    align-self: center;
+                    align-items: center;
+                    background-color: none;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-family: 'Merriweather', serif;
+                }
+            /* .btn:hover{
+                    transform: translate(0, -5px);
+                    background-color: rgb(7, 119, 67);
+                    color: wheat;
+                } */
+            /* .mainbtn:hover{
+                    transform: translate(0, -10px);
+                    background-color: #00808C;
+                    color: white;
+                } */
+            .card{
+                    margin-top: 40px;
+                    transition: transform .3s ease-out;
+                    display: inline-block;
+                    border: 0px;
+                    text-align: left;
+                    font-family: 'Merriweather', serif;
+                }
+            .card:hover{
+                    transform: translate(-5px, -10px);
+                    box-shadow: 18px 18px 18px rgba(5, 5, 5, 0.4);
+                }
+            .btn:hover{
+                transform: translate(-2px, -3px);
+                box-shadow: 8px 8px 8px rgba(5, 5, 5, 0.4);
+            }
+            .content{
+                    width:85%;
+                    height: 10%;
+                    text-align: left;
+                    padding-top: 25px;
+                    margin-top: 25px;
+                    background-color: none;
+                }
+            .footer{
+                    width: 100%;
+                    height: 30%;
+                    text-align: center;
+                    color: rgba(0,0,0,0.6);
+                    font-size: 18px;
+                    padding: 16px;
+                }
+                .embed-responsive .card-img-top {
+                    width: 70%;
+                    height: 40vh;
+                }  
+            @media screen and (max-width: 720px) {
+            .navbar{
+                    margin:0 auto;
+                }
+            .main1{
+                    margin:0 auto;
+                }
+            .content{
+                    padding: 0 auto;
+                }
+            .container{
+                    margin: 0 auto;
+                }
+            }
+            .custom-select {
+                position: relative;
+                font-family: Arial;
+            }
+
+        </style>
+    </head>
+    <body>
+    
+        <!-- NAVBAR -->
+        <nav  class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1">ALL <b>STUDENTS</b></span>
+                
+                <form action="/admin/allStudents" method="POST">
+                    
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" name="username" placeholder="Search By UserId">
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" name="studentName" placeholder="Search By Student Name">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-success">Find</button>
+                        </div>
+                    </div>
+                </form>
+        </nav>
+
+
+        <div class="main1">
+            <div class="container-fluid main2">
+                <div class="row">
+                    <% for(var i = 0; i < allFilteredStudents.length; i++) {  %>
+                        <div class="col-xs-12 col-sm-6  col-md-4 col-lg-4">
+                                <div class="card" style="width: 100%;">
+                                    <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> <b>Student Id</b>  : <%= allFilteredStudents[i].studentId %></li>
+                                    <li class="list-group-item"> <b>Student Name</b> : <%= allFilteredStudents[i].studentName.toUpperCase() %></li>
+                                    <br>
+                                        <form action="/admin/showMyHistory" method="POST">
+                                            <input type="text" name="username" style="display: none;" value= <%=allFilteredStudents[i].studentId %> >
+                                            <button type="submit" class="btn btn-primary">Detailed Profile</button>
+                                        </form>                 
+                                    </li>
+                                    <ul>
+                                </div>
+                        </div>
+                    <% }
+                    %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

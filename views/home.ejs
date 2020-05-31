@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body style="background-image: url(https://culturenl.co.uk/wp-content/uploads/2014/04/DSC_9842.jpg); background-repeat: no-repeat; background-size: cover;">
+	<nav style="background-color: #a84832">
+		<img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Iiit-una-logo.png" style="width:100px; height:100px; float: left; margin-left: 100px">
+		<h1 style="margin-left:250px;font-family: serif;font-size: 30px;color: white;">Indian Institute of Information Technology, Una</h1>
+		<h4 style="margin-left: 300px; font-size: 20px color: white">(An institute of national importance)</small>
+			<br>
+			<br>
+	</nav>
+	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <span class="navbar-brand" href="/admin" style ="margin-left: 50px;font-style: bold;font-size: 30px;font-family: serif;">Welcome to Online Library</span>
+        <a class="navbar-brand btn btn-dark btn-lg text-white" href="/admin">Admin</a>
+
+        <form action="/login" method="POST" class="form-inline" id ="three">
+            <input name="username" placeholder = "UserId" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+            <input name="password" placeholder = "Password" type="password" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+            <button class="btn btn-success text-white my-2 my-sm-0" type="submit">Sign in</button>
+        </form>
+    </nav>
+        <form action="/signup" method="POST" style ="width: 300px; margin-left: 800px; margin-top: 100px;">
+            <label style = "font-style: bold; font-size: 20px;font-family: serif;background-color: yellow;">New here? Create a free account!!</label>
+            <div class="form-group">
+                <input name="username" placeholder = "UserId ( i.e. Roll Number )" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+                <input name="studentName" placeholder = "Name" type="text" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="form-group">
+                <input name="password" placeholder = "Password" type="password" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+
+
+</body>
+</html>

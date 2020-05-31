@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Admin</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                                            $(".addButton").click(function(){
+                                                $(".myForm").show();
+                                            })
+                                            $(".updateButton").click(function(){
+                                                $(".myForm1").show();
+                                            })
+                                            $(".deleteButton").click(function(){
+                                                $(".myForm2").show();
+                                            })
+                                        })
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="text-align: center;">
+                <div>
+                    <button class="btn btn-primary addButton" style="width: 300px;">Add New Book</button>
+                    <div>
+                        <form class="myForm" action="/admin/addBook" method="POST" style="display: none;">
+                            <div class="form-group">
+                                <label>Book Name : </label>
+                                <input type="text" placeholder="book name" name="bookName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Auther Name : </label>
+                                <input type="text" placeholder="auther name" name="autherName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Category : </label>
+                                <input type="text" placeholder="category" name="category" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Book Edition : </label>
+                                <input type="text" placeholder="book edition" name="edition" class="form-control" required>
+                            </div>
+                            <div>
+                                <label>Current Availability : </label>
+                                <input type="text" placeholder="current availability" name="currentAvailable" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Source for Image:</label>
+                                <input type="text" placeholder="image source" name="bookImage" class="form-control" required>
+                            </div>
+                            <input type="submit" value="Save" class="btn btn-success">
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-warning updateButton" style="width: 300px;">Update Any Book</button>
+                    <div>
+                            <form class="myForm1" action="/admin/update" method="POST" style="display: none;">
+                                <div class="form-group">
+                                    <label>Book Id : </label>
+                                    <input type="text" placeholder="book id" name="_id" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Book Name : </label>
+                                    <input type="text" placeholder="book name" name="bookName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Updated Category : </label>
+                                    <input type="text" placeholder="category" name="category" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Auther Name : </label>
+                                    <input type="text" placeholder="auther name" name="autherName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Updated Book Edition : </label>
+                                    <input type="number" placeholder="edition" name="edition" class="form-control" required>
+                                </div>
+                                <div>
+                                    <label>Updated Current Availability : </label>
+                                    <input type="text" placeholder="current availability" name="currentAvailable" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Updated Image:</label>
+                                    <input type="text" placeholder="image source" name="bookImage" class="form-control" required>
+                                </div>
+                                <input type="submit" value="Save" class="btn btn-success">
+                            </form>
+                        </div>
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-danger deleteButton" style="width: 300px;">Delete Any Book</button>
+                    <form class="myForm2" action="/admin/deleteBook" method="POST" style="display: none;">
+                        <div class="form-group">
+                            <label>Book Id : </label>
+                            <input type="text" placeholder="book id" name="_id" class="form-control" required>
+                        </div>
+                        <input type="submit" value="Proceed" class="btn btn-danger">
+                    </form>
+                </div>
+                <br>
+                <div>
+                    <form action="/admin/viewBooks" method="POST">
+                        <button type="submit" class="btn btn-success" style="width: 300px;">View All Books  </button>
+                    </form>
+                </div>
+                <br>
+                <div>
+                    <form action="/admin/allStudents" method="POST">
+                        <button type="submit" class="btn btn-dark" style="width: 300px;">All Students Records  </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
