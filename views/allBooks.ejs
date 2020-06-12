@@ -161,6 +161,9 @@
                                     <li class="list-group-item"> <b>Category</b> : <%= allFilteredBooks[i].category.toUpperCase() %></li>
                                     <li class="list-group-item"> <b>Book Edition</b>   : <%= allFilteredBooks[i].edition %></li>
                                     <li class="list-group-item"> <b>Current Available</b>   : <%= allFilteredBooks[i].currentAvailable.toUpperCase() %></li>
+                                    <li class="list-group-item"> <b>Room Number</b>   : <%= allFilteredBooks[i].roomNumber %></li>
+                                    <li class="list-group-item"> <b>Shelf Number</b>   : <%= allFilteredBooks[i].shelfNumber %></li>
+                                    
                                     <br>
                                     <form action="/reserveBook" method="POST">
                                         <input type="text" name="bookId" style="display: none;" value= <%=allFilteredBooks[i].bookId %> >

@@ -27,7 +27,7 @@ app.use(passport.session());
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // URL OF MONGODB ATLAS
@@ -71,7 +71,9 @@ var bookSchema = new mongoose.Schema({
     },
     bookImage: String,
     dueDate: Date,
-    issueDate: Date
+    issueDate: Date,
+    roomNumber: Number,
+    shelfNumber: Number
 });
 
 // MAKE BOOK MODEL BASED ON BOOK SCHEMA
@@ -359,7 +361,9 @@ app.post('/admin/viewBooks', async function (req, res) {
             "category": book.category,
             "currentAvailable": book.currentAvailable,
             "edition": book.edition,
-            "bookImage": book.bookImage
+            "bookImage": book.bookImage,
+            "roomNumber": book.roomNumber,
+            "shelfNumber": book.shelfNumber
         };
         return filteredBook;
     });
@@ -491,7 +495,9 @@ app.post('/viewBooks', async function (req, res) {
             "category": book.category,
             "currentAvailable": book.currentAvailable,
             "edition": book.edition,
-            "bookImage": book.bookImage
+            "bookImage": book.bookImage,
+            "roomNumber": book.roomNumber,
+            "shelfNumber": book.shelfNumber
         };
         return filteredBook;
     });
