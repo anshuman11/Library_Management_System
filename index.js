@@ -132,7 +132,7 @@ app.post('/signup', function (req, res) {
                                     if (err) {
                                         res.send("Some error occurred!!..Student not saved");
                                     } else {
-                                        res.redirect(307,'/viewBooks');
+                                        res.redirect('/');
                                     }
                                 });
                             }
@@ -555,8 +555,8 @@ app.get('/admin',function(req, res){
 });
 
 app.post('/admin',function(req, res){
-    if(req.body.adminId === 'iiituna'){
-        if(req.body.password === 'iiitu123'){
+    if(req.body.adminId === 'admin'){
+        if(req.body.password === 'admin123'){
             res.render('admin');
         }
         else{
